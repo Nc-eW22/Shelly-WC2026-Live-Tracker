@@ -19,7 +19,7 @@ The Shelly app is the UI. The device does everything itself. No external automat
 
 Once installed, the tracker appears in the Shelly ecosystem as a full virtual device — and because it runs on a standard Shelly relay, the physical switch still works as a switch.
 
-> ⚠️ **Beta warning:** This is a proof of concept under active development. **Do not enable Run on Boot** — if the script encounters an issue on startup it may affect device availability. Start it manually, monitor the console, and only enable boot-start once you are satisfied it is stable on your device and network. Test at your own risk. BETA API FOOTBALL PREMIUM SUPORT ONLY !!!
+> ⚠️ **Beta warning:** This is a proof of concept under active development. **Do not enable Run on Boot** — if the script encounters an issue on startup it may affect device availability. Start it manually, monitor the console, and only enable boot-start once you are satisfied it is stable on your device and network. Test at your own risk. BETA [API FOOTBALL PREMIUM](https://www.api-football.com/) SUPORT ONLY !!!
 >
 > **Not tested on devices running Matter or Zigbee protocols.** If your device has Matter or Zigbee enabled, behaviour is unknown — use a standard Wi-Fi only device.
 
