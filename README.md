@@ -19,7 +19,7 @@ The Shelly app is the UI. The device does everything itself. No external automat
 
 Once installed, the tracker appears in the Shelly ecosystem as a full virtual device — and because it runs on a standard Shelly relay, the physical switch still works as a switch.
 
-> ⚠️ **Beta warning:** This is a proof of concept under active development. **Do not enable Run on Boot** — if the script encounters an issue on startup it may affect device availability. Start it manually, monitor the console, and only enable boot-start once you are satisfied it is stable on your device and network. Test at your own risk.
+> ⚠️ **Beta warning:** This is a proof of concept under active development. **Do not enable Run on Boot** — if the script encounters an issue on startup it may affect device availability. Start it manually, monitor the console, and only enable boot-start once you are satisfied it is stable on your device and network. Test at your own risk. BETA API FOOTBALL PREMIUM SUPORT ONLY !!!
 >
 > **Not tested on devices running Matter or Zigbee protocols.** If your device has Matter or Zigbee enabled, behaviour is unknown — use a standard Wi-Fi only device.
 
@@ -219,7 +219,7 @@ No extra service is required — if your device is connected to Shelly Cloud and
 | `WC2026_API_Debug.js` | Connectivity tester. Four-step probe of the API endpoints. Stop and delete after use. | No — diagnostic |
 | `WC2026_Demo.js` | Match replay tool. Replays a completed fixture on the device card for screenshots and recordings. Stop and delete after use. | No — demo only |
 
-> ⚠️ **Choose one Brain.** Run the Premium Brain (`WC2026_LIVE_Beta.js`) with an API-Football key, or the Basic/Free Brain (`WC2026_Tracker_Beta.js`) with a football-data.org key. Do not run both at once — they write to the same virtual components.
+> ⚠️ **Choose one Brain.** Run the Premium Brain (`WC2026_LIVE_Beta.js`) with an API-Football key, or the Basic/Free Brain (`WC2026_Tracker_Beta.js`) with a football-data.org key. Do not run both at once — they write to the same virtual components.Please Note Free and basic are currenty untested and script works ONLY with API Football.
 
 ### Documentation
 
