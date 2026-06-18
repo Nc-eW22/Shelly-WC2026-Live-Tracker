@@ -260,48 +260,60 @@ The Premium tier is the full experience and the focus of this release. The Basic
 
 ---
 
-### Step 1 — Flash the Installer
+## 🛠️ Installation & Quick Start
 
-Create a new script on the device named `WC2026_Installer`, paste the contents of `WC2026_Installer.js`, and save.
+Follow this exact slot-allocation layout to ensure the automated installation scripts can communicate, provision your device, and clean up safely.
+
+### Step 1 — Slot Allocation & Flashing
+
+Create and save the following three scripts into their dedicated slots. **Do not run them yet.**
+
+* **Slot 1:** `WC2026 Live Tracker` (Paste your chosen Brain: `WC2026_LIVE_Beta.js` for Premium or `WC2026_Tracker_Beta.js` for Basic/Free).
+* **Slot 2:** `WC2026_Installer` (Paste the contents of `WC2026_Installer.js`).
+* **Slot 3:** `WC2026_Seeder` (Paste the contents of `WC2026_KVS_Seeder_v2_0.js`).
+
+---
 
 ### Step 2 — Configure via Web UI
 
-Start the Installer and open the configuration page in a browser:
+Start **Script 2 (Installer)** and open the interactive configuration interface in your browser:
 
-```
-http://<device_ip>/script/<id>/ui
-```
+http://<device_ip>/script/2/ui **Full HTTP with IP logged in the console**
 
 <div align="center">
   <img src="docs/images/WC2026_SETUP.jpg" alt="Installer web UI" width="400">
 </div>
 
-In the web UI:
-- Enter your API token
-- Select your tier (Premium / Basic / Free)
-- Set your timezone offset (UTC hours)
-- Choose your teams from the group-by-group picker (up to 10)
-- Click install
+In the web interface:
+* Enter your API token.
+* Select your operational tier (Premium / Basic / Free).
+* Choose your favorite teams from the group-by-group picker (up to 10).
+* Click **Save**.
 
-The Installer writes all KVS keys, provisions the 9 virtual components, and self-stops to free heap.
+---
 
-### Step 3 — Flash the Brain
+### Step 3 — Automated Device Provisioning
 
-Create a new script in slot 1 named `WC2026 Live Tracker`. Paste the Brain that matches your tier:
-- **Premium:** `WC2026_LIVE_Beta.js`
-- **Basic/Free:** `WC2026_Tracker_Beta.js`
+Close your browser configuration window and open the Shelly device console to watch the automated deployment pipeline execute:
 
-Set it to run on boot and start it. The Brain reads KVS, acquires the component handles, and begins polling.
+1.  **Script 2 (Installer)** prepares the device by provisioning the 9 required native Virtual Components.
+2.  Once components are built, **Script 2 dynamically starts Script 3 (Seeder)**.
+3.  **Script 3** writes all group structures, timezone offsets, and authentication token keys to Key-Value Storage (KVS) based strictly on your Web UI selections.
 
-> 💡 **The Brain prints its state endpoint URL on every boot:**
+---
+
+### Step 4 — Clean Up & Kickoff
+
+Once both utility scripts have finished execution and stopped completely:
+
+1.  **Delete Script 2 and Script 3** from your device slots to clear up and prevent accidental execution.
+2.  Open **Script 1 (The Brain)**, **DO NOT** toggle it to **Run on Startup**, and click **Start**.
+
+> 💡 **The Brain prints its local state endpoint URL on every boot:**
 > ```
-> [BRAIN] Endpoint: http://192.168.x.x/script/1/ctrl?cmd=state
+> [BRAIN] Endpoint: http://<device_ip>/script/1/ctrl?cmd=state
 > ```
-> This is the read-only state feed for the planned WLED consumer.
-
-### Step 4 — Clean Up
-
-**Delete the Installer slot** once the Brain is running Delete the installer script for maximum headroom during live polling.
+> This serves as the read-only flat JSON feed for downstream smart home appliances or a planned WLED scoreboard matrix window curtain!
 
 ---
 
