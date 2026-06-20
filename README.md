@@ -418,7 +418,7 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 **⚡ SPARK_LABS** — **S**helly **P**owered **A**utomation **R**eliable **K**ontrol
 
-Technician, Installer & Shelly Academy Graduate at Recowatt Malta
+Technician, Installer & Shelly Academy Graduate
 
 [github.com/Nc-eW22](https://github.com/Nc-eW22)
 
